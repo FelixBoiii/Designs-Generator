@@ -1,4 +1,4 @@
-# New Project
+# DesignS Generator
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
