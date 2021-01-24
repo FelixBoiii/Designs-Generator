@@ -1,4 +1,4 @@
-# DesignS Generator
+# Designs Generator
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
