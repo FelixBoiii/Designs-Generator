@@ -1,0 +1,14 @@
+/* Add CSS styles here! */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', serif;
+  font-size: x-large;
+  height: 100%;
+}
+
+label{
+  color: #303a3f;
+}
