@@ -3,11 +3,10 @@ import { readable } from 'svelte/store';
 import 'canvas2svg';
 //Writes---------------------------------
 export const colorPallete = writable([
-    "#FFFFFF",
-    "#5fa8d3",
-    "#62b6cb",
-    "#1b4965",
-    "#ff6b6b",
+    "#ffe6e6",
+    "#ffabe1",
+    "#a685e2",
+    "#6155a6",
 ])
 export const gridXY = writable([10, 10])
 export const frequency = writable(0.7)

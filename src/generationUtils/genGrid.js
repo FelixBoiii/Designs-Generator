@@ -31,8 +31,8 @@ export function canvasSetup() {
 }
 
 export function drawGrid() {
-    for (let i = 0; i < 800; i += 80) {
-        for (let j = 0; j < 800; j += 80) {
+    for (let i = 0; i < 800 / Math.max(...get(gridXY)) * get(gridXY)[0]; i += 800 / Math.max(...get(gridXY))) {
+        for (let j = 0; j < 800 / Math.max(...get(gridXY)) * get(gridXY)[1]; j += 800 / Math.max(...get(gridXY))) {
             let randN = Math.random()
             drawGridV3(i, j, get(frequency), randN)
         }
