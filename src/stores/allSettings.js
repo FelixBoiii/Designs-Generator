@@ -10,6 +10,7 @@ export const colorPallete = writable([
 ])
 export const gridXY = writable([10, 10])
 export const frequency = writable(0.7)
+export const ActiveGridVersion = writable(1)
 export const ctx = writable(new C2S(800, 800))
 //export const gridSize = writable(80)
 

@@ -2,10 +2,10 @@ import { get } from 'svelte/store';
 import { gridXY, ctx } from "../stores/allSettings";
 import { getColorFromPallete } from "./genGrid";
 
-let hObjectSize = 800 / Math.max(...get(gridXY)) * 0.5
+let hObjectSize = get(ctx).width / Math.max(...get(gridXY)) * 0.5
 
 function updateHObjectSize() {
-    hObjectSize = 800 / Math.max(...get(gridXY)) * 0.5
+    hObjectSize = get(ctx).width / Math.max(...get(gridXY)) * 0.5
 }
 
 export function StartObjectDraw(i, j) {
@@ -17,8 +17,8 @@ export function StartObjectDraw(i, j) {
     get(ctx).fill()
 }
 
-export function endObjectDraw() {
-    get(ctx).fillStyle = getColorFromPallete(false)
+export function endObjectDraw(bgColor = false) {
+    get(ctx).fillStyle = getColorFromPallete(bgColor)
     get(ctx).fill();
     get(ctx).restore()
 }
@@ -61,20 +61,20 @@ export function pyramid(i, j, randAngle) {
     this.endObjectDraw()
 }
 
-export function rectangle(i, j) {
+export function rectangle(i, j, bgColor) {
     this.StartObjectDraw(i, j)
     get(ctx).moveTo(-hObjectSize, -hObjectSize)
     get(ctx).lineTo(hObjectSize, -hObjectSize)
     get(ctx).lineTo(hObjectSize, hObjectSize)
     get(ctx).lineTo(-hObjectSize, hObjectSize)
-    this.endObjectDraw()
+    this.endObjectDraw(bgColor)
 }
 
-export function quarterArc(i, j) {
+export function quarterArc(i, j, bgColor) {
     this.StartObjectDraw(i, j)
     get(ctx).arc(-hObjectSize, -hObjectSize, hObjectSize * 2, 0, 0.5 * Math.PI)
     get(ctx).lineTo(-hObjectSize, -hObjectSize)
-    this.endObjectDraw()
+    this.endObjectDraw(bgColor)
 }
 
 export function halfArc(i, j) {

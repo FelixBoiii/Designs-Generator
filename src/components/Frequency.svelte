@@ -10,7 +10,7 @@
         max="1"
         step="0.1"
         bind:value={$frequency}
-        on:mouseup={() => {
+        on:change={() => {
             reload();
         }}
     />

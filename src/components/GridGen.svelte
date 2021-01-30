@@ -3,17 +3,21 @@
     import ColorPallete from "./ColorPallete.svelte";
     import Frequency from "./Frequency.svelte";
     import GridSize from "./GridSize.svelte";
+    import VersionOb from "./VersionOb.svelte";
+    import { colorPallete } from "../stores/allSettings";
     import {
         reload,
+        createVersionGrid,
         downloadButtonSVG,
         downloadButtonPNG,
     } from "../generationUtils/genGrid";
     onMount(() => {
+        //createVersionGrid();
         reload();
     });
 </script>
 
-<div class="gridGen">
+<div class="gridGen" style="--bgColor: {$colorPallete[0]}">
     <div class="grid-show">
         <div id="svgExample" />
     </div>
@@ -21,6 +25,7 @@
         <ColorPallete />
         <GridSize />
         <Frequency />
+        <VersionOb />
         <button
             on:click={() => {
                 reload();
@@ -41,7 +46,6 @@
 
 <style>
     .gridGen {
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -49,20 +53,19 @@
     }
 
     .grid-show {
-        min-height: 100%;
-        width: 60%;
-        background-color: #f2f5fc;
+        background-color: var(--bgColor);
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 1em;
     }
 
     #svgExample {
-        border: 3px solid slategray;
+        margin: 2rem 2rem;
     }
 
     .settings {
-        width: 40%;
+        width: 30%;
         display: flex;
         flex-direction: column;
         align-items: center;
